@@ -15,7 +15,7 @@ direction: ltr
 # languages/*.yml
 nav:
   home: /
-  about: https://twitter.com/DangKexi
+  about: /me
   articles: /archives/
   projects: https://github.com/kexiZeroing
 
