@@ -34,7 +34,7 @@ Shadowsocks 的出现是一个拐点，它把代理服务器拆分成 server 端
 - 记录服务器 IP、服务器 ss 端口、设置的密码、混淆方式和加密方式。（如果某一天你的 ss 突然无法使用了，很可能就是端口被封了，这时候可以尝试修改配置将端口改为 1-65535 间任意的其他数字）
 
 ### Shadowsocks 客户端
-> 相比服务器端的安装，客户端的安装就简单许多，大多数用户只需要这一步。
+> 相比服务器端的安装，客户端的安装就简单许多，大多数用户只需要这一步。具体文档参考：https://github.com/Shadowsocks-Wiki/shadowsocks
 
 #### Mac 客户端 
 - 下载地址 https://github.com/shadowsocks/ShadowsocksX-NG/releases/
