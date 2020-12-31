@@ -224,7 +224,7 @@ Nathaniel Hawthorne’s novel <i>The Scarlet Letter</i> has been made into sever
 # Explanation: Hawthorne wrote more than one novel.
 
 Nathaniel Hawthorne’s first novel, <i>Fanshawe</i>, was published anonymously in 1828.
-#Explanation: Hawthorne had only one first novel.
+# Explanation: Hawthorne had only one first novel.
 </pre>
 
 ### Introductory matter and Afterthoughts
