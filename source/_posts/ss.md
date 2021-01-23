@@ -105,3 +105,16 @@ ClashX，Trojan-QT5，TrojanX 均为 Mac 客户端，不同客户端主要是界
 - 第一次连接时，客户端会请求 VPN 设置权限，请选择允许
 - 点击切换服务器进行添加或更换节点
 - 可以选择使用全局模式或是规则模式，在规则设置中选择网址，参考规则列表网址: https://raw.githubusercontent.com/pexcn/daily/gh-pages/shadowrocket/whitelist.conf
+
+## Proxy server configuration on Mac
+When you configure a proxy server on your Mac, applications will send their network traffic through the proxy server before going to their destination. This may be required by your employer to bypass a firewall, or you may want to use a proxy to bypass geoblocking and access websites that aren’t available in your country.
+
+In the network settings, if you want to configure the proxies used while connected to Wi-Fi networks, select “Wi-Fi”. If you want to configure the proxies used while connected to wired networks, click “Ethernet”.
+
+- To have your Mac detect whether a proxy is necessary and automatically configure the proxy settings, enable the **Auto Proxy Discover** checkbox. Your Mac will use the Web Proxy Auto Discover protocol, or WPAD, to automatically detect whether a proxy is necessary.
+- To use an automatic proxy configuration script, also known as a `.PAC` file, enable the **Automatic Proxy Configuration** checkbox. Enter the address of the script in the URL box.
+- To manually configure a proxy, you’ll need to enable one or more of the **Web Proxy (HTTP)**, **Secure Web Proxy (HTTPS)**, **FTP Proxy**, **SOCKS Proxy**, and **Streaming Proxy (RTSP)** checkboxes. Enter the address and port number of the proxy for each option you enable.
+
+The image below is proxy settings after enabling ClashX client (you don't need to configure them manually). If you don’t want to configure a proxy, ensure all these boxes are unchecked.
+
+<img alt="proxy settings" src="https://ftp.bmp.ovh/imgs/2021/01/270e4181ab74221e.png" width="600">
