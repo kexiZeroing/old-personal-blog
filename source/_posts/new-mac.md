@@ -20,16 +20,18 @@
     199.232.28.133    avatars8.githubusercontent.com
     # GitHub End
     ```
-3. `git --version`, 提示安装 Command Line Developer Tools
-4. 安装 [Homebrew](https://brew.sh/) 根据运行最后的提示(Next steps) add Homebrew to your **PATH**
-5. App 安装, `brew install --cask visual-studio-code google-chrome firefox iterm2` and `brew install yarn nvm`
+3. `git --version`, 提示安装 Command Line Developer Tools，之后可以查看到 git verison 2.30.1 (Apple Git-130)
+4. 安装 [Homebrew](https://brew.sh/) 根据运行最后的提示(Next steps) add Homebrew to your **PATH**，之后可以执行 `brew help`
+5. App 安装 (may refer to https://formulae.brew.sh), `brew install --cask visual-studio-code google-chrome firefox iterm2` and `brew install yarn`, then use `brew list` to check.
     > `cask` is no longer a `brew` command. When you want to install a Cask, you just do `brew install` or `brew install --cask` instead of `brew cask install`.
 6. 登录 Chrome，同步插件、收藏夹等，set Devtool's theme to "Dark" and go to Experiments and select "Allow extensions to load custom stylesheets".
-7. 使用 iTerm2，可以设置 hotkey 比如全屏方式，安装 [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) 之后查看 `~/.zshrc` 文件, 设置 theme, alias 等。
-8. Set global configuration with Git `touch ~/.gitconfig`
-9. 使用 nvm 安装 node, `nvm --ls`, and check `node -v`, `npm -v`
+7. 使用 iTerm2，安装 [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) 之后查看 `~/.zshrc` 文件, 设置 theme, alias 等。
+8. Set global configuration with Git `touch ~/.gitconfig` and check `git config --list`
+9. 安装 [nvm](https://github.com/nvm-sh/nvm), 之后检查 `nvm -v`, 使用 nvm 安装 node, `nvm ls`, and check `node -v`, `npm -v`
+    > nvm install script clones the nvm repository to `~/.nvm`, and attempts to add the source lines to the correct profile file like `~/.zshrc` or `~/.bashrc`
+    
     > nvm 默认是国外的服务器下载，在国内速度很慢，使用镜像 `NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install v12`  同理对于 npm install，使用 `npm --registry=https://registry.npm.taobao.org install xxx`
 
-    > 当你用 nvm 尝试去安装 v14 及以下的 Node 版本时，大概率会报错（低版本的 node 并不是基于 arm 架构的），在终端执行 `arch -x86_64 zsh`，然后再执行 `nvm install xxx`
+    > 当你用 nvm 尝试去安装 v14 及以下的 Node 版本时，大概率会报错（低版本的 node 并不是基于 arm 架构的），用 Rosetta 打开 iTerm (Get info -> Open using Rosetta)，然后再执行 `nvm install xxx`
 10. 根据之前电脑，安装需要的 VS Code 插件
-11. Github ssh key, `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"` and `pbcopy < ~/.ssh/id_rsa.pub`, then add it to Github SSH keys. Then clone a project and have a new commit.
+11. Github ssh key, `ssh-keygen -t rsa -b 4096 -C your_email@example.com` and `pbcopy < ~/.ssh/id_rsa.pub`, then add it to Github SSH keys. Then clone a project and have a new commit.
