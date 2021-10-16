@@ -22,7 +22,7 @@
     ```
 3. `git --version`, 提示安装 Command Line Developer Tools，之后可以查看到 git verison 2.30.1 (Apple Git-130)
 4. 安装 [Homebrew](https://brew.sh/) 根据运行最后的提示(Next steps) add Homebrew to your **PATH**，之后可以执行 `brew help`
-5. App 安装 (may refer to https://formulae.brew.sh), `brew install --cask visual-studio-code google-chrome firefox iterm2` and `brew install yarn`, then use `brew list` to check.
+5. App 安装 (refer to https://formulae.brew.sh), `brew install --cask visual-studio-code google-chrome firefox iterm2` and `brew install yarn`, then use `brew list` to check.
     > `cask` is no longer a `brew` command. When you want to install a Cask, you just do `brew install` or `brew install --cask` instead of `brew cask install`.
 6. 登录 Chrome，同步插件、收藏夹等，set Devtool's theme to "Dark" and go to Experiments and select "Allow extensions to load custom stylesheets".
 7. 使用 iTerm2，安装 [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) 之后查看 `~/.zshrc` 文件, 设置 theme, alias 等。
@@ -34,4 +34,4 @@
 
     > 当你用 nvm 尝试去安装 v14 及以下的 Node 版本时，大概率会报错（低版本的 node 并不是基于 arm 架构的），用 Rosetta 打开 iTerm (Get info -> Open using Rosetta)，然后再执行 `nvm install xxx`
 10. 根据之前电脑，安装需要的 VS Code 插件
-11. Github ssh key, `ssh-keygen -t rsa -b 4096 -C your_email@example.com` and `pbcopy < ~/.ssh/id_rsa.pub`, then add it to Github SSH keys. Then clone a project and have a new commit.
+11. Github ssh key, `ssh-keygen -t rsa -b 4096 -C your_email@example.com` and `pbcopy < ~/.ssh/id_rsa.pub`, then add it to Github SSH keys. Type `ssh-add -K ~/.ssh/id_rsa` to store the passphrase in your keychain. Then clone a project and have a new commit.
