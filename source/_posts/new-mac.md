@@ -30,8 +30,10 @@
 9. 安装 [nvm](https://github.com/nvm-sh/nvm), 之后检查 `nvm -v`, 使用 nvm 安装 node, `nvm ls`, and check `node -v`, `npm -v`
     > nvm install script clones the nvm repository to `~/.nvm`, and attempts to add the source lines to the correct profile file like `~/.zshrc` or `~/.bashrc`
     
-    > nvm 默认是国外的服务器下载，在国内速度很慢，使用镜像 `NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install v12`  同理对于 npm install，使用 `npm --registry=https://registry.npm.taobao.org install xxx`
+    > nvm 默认是国外的服务器下载，在国内速度很慢，使用镜像 `NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install v12` 同理对于 npm install，使用 `npm --registry=https://registry.npm.taobao.org install xxx` 或者用 cnpm (require nodeJs >= 10.0.0), `npm install -g cnpm --registry=https://registry.npm.taobao.org`, 之后使用 `cnpm install`
+
+    > 设置打开终端默认使用的 node 版本: `nvm alias default x.y.z`, 删除 nvm 管理的某个 node 版本: `cd ~/.nvm/versions/node` and `rm -rf x.y.z`
 
     > 当你用 nvm 尝试去安装 v14 及以下的 Node 版本时，大概率会报错（低版本的 node 并不是基于 arm 架构的），用 Rosetta 打开 iTerm (Get info -> Open using Rosetta)，然后再执行 `nvm install xxx`
 10. 根据之前电脑，安装需要的 VS Code 插件
-11. Github ssh key, `ssh-keygen -t rsa -b 4096 -C your_email@example.com` and `pbcopy < ~/.ssh/id_rsa.pub`, then add it to Github SSH keys. Type `ssh-add -K ~/.ssh/id_rsa` to store the passphrase in your keychain. Then clone a project and have a new commit.
+11. Github ssh key, `ssh-keygen -t rsa -b 4096 -C your_email@example.com` (multiple ssh keys: `ssh-keygen -t rsa -b 4096 -C email@another.com -f $HOME/.ssh/another/id_rsa`) and `pbcopy < ~/.ssh/id_rsa.pub`, then add it to Github SSH keys. Type `ssh-add -K ~/.ssh/id_rsa` to store the passphrase (`-K` for adding in your keychain). Then clone a project and have a new commit.
