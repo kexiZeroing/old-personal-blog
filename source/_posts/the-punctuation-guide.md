@@ -1,6 +1,10 @@
-# The Punctuation Guide
+---
+title: The Punctuation Guide
+date: 2020-12-31 20:10:14
+tags: [writing, punctuation]
+---
 
-> Writing is alwasy necessary and important, but sometimes we're confused about the use of punctuation marks. I came across a guide for this https://www.thepunctuationguide.com and want to document it here.
+Writing is alwasy necessary and important, but sometimes we're confused about the use of punctuation marks. I came across a guide for this https://www.thepunctuationguide.com and want to document it here.
 
 ## Period `.`
 It ends a sentence. Difficulty generally arises only when the period is used with other punctuation marks.

@@ -17,7 +17,7 @@ nav:
   home: /
   about: /me
   articles: /archives/
-  knowledge: https://www.yuque.com/u235546/qz3u9h
+  knowledge: https://github.com/kexiZeroing/FE-Learning-notes
 
 
 # Links to your social media accounts.
@@ -26,8 +26,7 @@ nav:
 # only 'mail' is an exception.
 social_links:
   github: https://github.com/kexiZeroing
-  twitter: https://twitter.com/DangKexi
-  weibo: https://weibo.com/dangkexi 
+  twitter: https://twitter.com/kdang2020
   linkedin: https://linkedin.com/in/dangkexi/
   mail: mailto:dangkexi@gmail.com
 
