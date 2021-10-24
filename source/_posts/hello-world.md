@@ -11,7 +11,7 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 ### Create a new post
 
 ``` bash
-$ hexo new "My New Post"  # npm run hexo ...
+$ hexo new "My New Post"
 ```
 
 More info: [Writing](https://hexo.io/docs/writing.html)
@@ -28,6 +28,9 @@ More info: [Server](https://hexo.io/docs/server.html)
 
 ``` bash
 $ hexo generate
+
+# watch for file changes and only write if file changes are detected.
+$ hexo generate --watch  
 ```
 
 More info: [Generating](https://hexo.io/docs/generating.html)
@@ -35,10 +38,10 @@ More info: [Generating](https://hexo.io/docs/generating.html)
 ### Deploy to remote sites
 
 ``` bash
-$ hexo deploy
+# same as `hexo deploy --generate`
+# npm run hexo generate -- --deploy  
+$ hexo generate --deploy
 ```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)
 
 ###  保存源代码（新建分支）
 - 我们用 master 分支来保存 hexo 生成的静态网页，对于博客源码，可以新建一个 source 分支来存储。在 username.github.io 仓库建立一个 source 分支
