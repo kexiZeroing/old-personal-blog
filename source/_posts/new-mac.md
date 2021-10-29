@@ -33,6 +33,10 @@ draft: true
     > `cask` is no longer a `brew` command. When you want to install a Cask, you just do `brew install` or `brew install --cask` instead of `brew cask install`.
 6. 登录 Chrome，同步插件、收藏夹等，set Devtool's theme to "Dark" and go to Experiments and select "Allow extensions to load custom stylesheets".
 7. 使用 iTerm2，安装 [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) 之后查看 `~/.zshrc` 文件, 设置 theme, alias 等。
+    > 'unable to access error': Something is blocking the connection to github. It is likely some kind of firewall, either on your machine or in your network. If it works with a browser on same machine then the browser is probably using a proxy and you need to configure git to use this proxy too.
+    >  - check if your git uses proxy: `git config --global http.proxy`
+    >  - set proxy address: `git config --global http.proxy 127.0.0.1:7890`
+    >  - reset the proxy: `git config --global --unset http.proxy`
 8. Set global configuration with Git `touch ~/.gitconfig` and check `git config --list`
 9. 安装 [nvm](https://github.com/nvm-sh/nvm), 之后检查 `nvm -v`, 使用 nvm 安装 node, `nvm ls`, and check `node -v`, `npm -v`
     > nvm install script clones the nvm repository to `~/.nvm`, and attempts to add the source lines to the correct profile file like `~/.zshrc` or `~/.bashrc`
