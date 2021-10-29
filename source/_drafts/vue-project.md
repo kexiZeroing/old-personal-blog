@@ -20,6 +20,14 @@
 - alias 配置别名，把导入路径映射成一个新的导入路径。Vue npm 包有不同的 Vue.js 构建版本（运行时 + 编译器 vs 只包含运行时），如果要使用完整版，则需要在打包工具里配置一个别名 `'vue$': 'vue/dist/vue.esm.js`，这样 import vue 是为打包工具提供的 ES Modules。
 - modules 数组，tell webpack what directories should be searched when resolving modules, 默认是去 node_modules 目录下寻找。
 
+### ExtractTextPlugin
+- 打包样式，一种是使用 `style-loader` 将生成的 style 标签并且插入到 head 里，另一种是使用  `extract-text-webpack-plugin`，将样式文件单独打包并指定生成的 filename，它需要同时配置 loader 和 plugin 两个地方。
+- Since webpack v4 the `extract-text-webpack-plugin` should not be used for css. Use `mini-css-extract-plugin` instead.
+
+### Vue Loader
+- `vue-loader` 会解析单文件形式的 Vue 组件。应该将 `vue-loader` 和 `vue-template-compiler` 一起安装，而且 `vue-template-compiler` 的版本要和 vue 保持同步。同时需要添加 `VueLoaderPlugin` 插件，它的职责是将你定义过的其它规则复制并应用到 `.vue` 文件里相应语言的块，比如 `['vue-style-loader', 'css-loader', 'sass-loader']` 处理普通的 `.scss` 文件和 `*.vue` 文件中的 `<style lang="scss">`
+- `vue-loader` 会把 template 中遇到的资源 URL 转换为 webpack 模块请求；处理 scoped style 的样式只作用于当前组件中的元素，如果希望 scoped 样式影响到更深的子组件，可以使用 `::v-deep`；When manually setting up your project (not use vue-cli), hot-reload (without reloading the page) is enabled automatically when you serve your project with `webpack-dev-server --hot`.
+
 
 ## 路由相关
 - 使用 `vue-router 3.x`，由于 VueRouter 是 default export 只有一个，所以在引入时可以任意起名字。
@@ -34,10 +42,7 @@
 
 ## Vuex 相关
 - Vuex store，主要包括 state，mutations，actions；从 store 中读取状态是在 computed 中返回某个 state，触发变化是在组件的 methods 中 commit mutation。在创建 Vue 实例时，注入一个 store 实例，从而在所有子组件可以访问 `this.$store`
-- 不想在组件内重复的写 `this.$store.state.xx`，`this.$store.commit`，`this.$store.dispatch`，使用 `mapState`, `mapMutations`, `mapActions` 辅助函数把 store 中同名的状态或操作映射到组件内，相当于在组件内直接定义了这些计算属性和方法
 - 提交 mutation 是更改状态的唯一方法，并且这个过程是同步的（类似于 reducer），action (接收一个 store，可以解构) 提交 mutation，`store.dispatch` 返回一个 Promise 可以组合下一个 action
+- 不想在组件内重复的写 `this.$store.state.xx`，`this.$store.commit`，`this.$store.dispatch`，使用 `mapState`, `mapMutations`, `mapActions` 辅助函数把 store 中同名的状态或操作映射到组件内，相当于在组件内直接定义了这些计算属性和方法，比如 `this.incrementBy(amount)` 映射为 `this.$store.dispatch('incrementBy', amount)`
 - 可以把 store 分割成多个 module，每个 module 拥有自己的 state，mutations，actions，创建 Vuex.Store 时传入 modules 配置。可以给每个 module 添加 `namespaced: true` 使其成为带命名空间的模块，此时在组件内需将 module 的名字作为第一个参数传递给 `mapState`, `mapActions`，这样所有的映射都会自动将这个 module 作为上下文（也可以用 `createNamespacedHelpers('some/nested/module')` 函数，它会返回绑定在给定命名空间上的 `mapState`, `mapActions`）
 - 如果 store 文件太大，可以将 mutations，actions 以及每个 module 分割到单独的文件
-
-
-## Vue Loader
