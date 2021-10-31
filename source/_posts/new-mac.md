@@ -28,23 +28,25 @@ draft: true
     # GitHub End
     ```
 3. `git --version`, 提示安装 Command Line Developer Tools，之后可以查看到 git verison 2.30.1 (Apple Git-130)
-4. 安装 [Homebrew](https://brew.sh/) 根据运行最后的提示(Next steps) add Homebrew to your **PATH**，之后可以执行 `brew help`
+4. 安装 [Homebrew](https://brew.sh/) 根据运行最后的提示(Next steps) add Homebrew to your **PATH**，之后可以执行 `brew help`. M1 的安装位置在 `/opt/homebrew/`, Intel 的安装位置在 `/usr/local/Cellar/`
 5. App 安装 (refer to https://formulae.brew.sh), `brew install --cask visual-studio-code google-chrome firefox iterm2` and `brew install yarn`, then use `brew list` and `brew info google-chrome` to check.
     > `cask` is no longer a `brew` command. When you want to install a Cask, you just do `brew install` or `brew install --cask` instead of `brew cask install`.
 6. 登录 Chrome，同步插件、收藏夹等，set Devtool's theme to "Dark" and go to Experiments and select "Allow extensions to load custom stylesheets".
-7. 使用 iTerm2，安装 [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) 之后查看 `~/.zshrc` 文件, 设置 theme, alias 等。
+7. 使用 iTerm2，安装 [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) 之后查看 `~/.zshrc` 文件, 设置 theme, alias, and `source ~/.zshrc`
     > 'unable to access error': Something is blocking the connection to github. It is likely some kind of firewall, either on your machine or in your network. If it works with a browser on same machine then the browser is probably using a proxy and you need to configure git to use this proxy too.
     >  - check if your git uses proxy: `git config --global http.proxy`
     >  - set proxy address: `git config --global http.proxy 127.0.0.1:7890`
     >  - reset the proxy: `git config --global --unset http.proxy`
+
+    > 查看当前使用的 Shell: `echo $SHELL`, 列出系统安装的 Shell: `cat /etc/shells`, 更改当前使用的 Shell: `chsh -s /bin/zsh`
 8. Set global configuration with Git `touch ~/.gitconfig` and check `git config --list`
 9. 安装 [nvm](https://github.com/nvm-sh/nvm), 之后检查 `nvm -v`, 使用 nvm 安装 node, `nvm ls`, and check `node -v`, `npm -v`
     > nvm install script clones the nvm repository to `~/.nvm`, and attempts to add the source lines to the correct profile file like `~/.zshrc` or `~/.bashrc`
     
     > nvm 默认是国外的服务器下载，在国内速度很慢，使用镜像 `NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install v12` 同理对于 npm install，使用 `npm --registry=https://registry.npm.taobao.org install xxx` 或者用 cnpm (require nodeJs >= 10.0.0), `npm install -g cnpm --registry=https://registry.npm.taobao.org`, 之后使用 `cnpm install`
 
-    > 设置打开终端默认使用的 node 版本: `nvm alias default x.y.z`, 删除 nvm 管理的某个 node 版本: `cd ~/.nvm/versions/node` and `rm -rf x.y.z`
+    > 设置打开终端默认使用的 node 版本: `nvm alias default x.y.z`, 检查当前使用的 node: `which node` 或 `echo $PATH`, 删除 nvm 管理的某个 node 版本: `cd ~/.nvm/versions/node` and `rm -rf x.y.z`
 
     > 当你用 nvm 尝试去安装 v14 及以下的 Node 版本时，大概率会报错（低版本的 node 并不是基于 arm 架构的），用 Rosetta 打开 iTerm (Get info -> Open using Rosetta)，然后再执行 `nvm install xxx`
-10. Github ssh key, `ssh-keygen -t rsa -b 4096 -C your_email@example.com` (multiple ssh keys: `ssh-keygen -t rsa -b 4096 -C email@another.com -f $HOME/.ssh/another/id_rsa`) and `pbcopy < ~/.ssh/id_rsa.pub`, then add it to Github SSH keys. Type `ssh-add -K ~/.ssh/id_rsa` to store the passphrase (`-K` for adding in your keychain). Then clone a project and have a new commit.
+10. Github ssh key, `ssh-keygen -t rsa -b 4096 -C your_email@example.com` (multiple ssh keys: `ssh-keygen -t rsa -b 4096 -C email@another.com -f $HOME/.ssh/another/id_rsa`) and `pbcopy < ~/.ssh/id_rsa.pub`, then add it to Github SSH keys. Type `ssh-add -K ~/.ssh/id_rsa` to store the passphrase (`-K` for adding in your keychain).
 11. 默认截屏，`Shift-Command-3` 捕捉整个屏幕，`Shift-Command-4` 捕捉屏幕的一部分，`Shift-Command 5` 打开截屏工具，可以设置延迟截屏，文件的存储位置 (某一路径或剪贴板)。
