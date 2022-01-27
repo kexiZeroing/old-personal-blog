@@ -48,5 +48,8 @@ draft: true
     > 设置打开终端默认使用的 node 版本: `nvm alias default x.y.z`, 检查当前使用的 node: `which node` 或 `echo $PATH`, 删除 nvm 管理的某个 node 版本: `cd ~/.nvm/versions/node` and `rm -rf x.y.z`
 
     > 当你用 nvm 尝试去安装 v14 及以下的 Node 版本时，大概率会报错（低版本的 node 并不是基于 arm 架构的），用 Rosetta 打开 iTerm (Get info -> Open using Rosetta)，然后再执行 `nvm install xxx`
+
+    <img alt="cnpm" src="https://tva1.sinaimg.cn/large/008i3skNly1gys18ppn9dj313o0pk0w3.jpg" width="700">
+
 10. Github ssh key, `ssh-keygen -t rsa -b 4096 -C your_email@example.com` (multiple ssh keys: `ssh-keygen -t rsa -b 4096 -C email@another.com -f $HOME/.ssh/another/id_rsa`) and `pbcopy < ~/.ssh/id_rsa.pub`, then add it to Github SSH keys. Type `ssh-add -K ~/.ssh/id_rsa` to store the passphrase (`-K` for adding in your keychain).
 11. 默认截屏，`Shift-Command-3` 捕捉整个屏幕，`Shift-Command-4` 捕捉屏幕的一部分，`Shift-Command 5` 打开截屏工具，可以设置延迟截屏，文件的存储位置 (某一路径或剪贴板)。
