@@ -52,4 +52,8 @@ draft: true
     <img alt="cnpm" src="https://tva1.sinaimg.cn/large/008i3skNly1gys18ppn9dj313o0pk0w3.jpg" width="700">
 
 10. Github ssh key, `ssh-keygen -t rsa -b 4096 -C your_email@example.com` (multiple ssh keys: `ssh-keygen -t rsa -b 4096 -C email@another.com -f $HOME/.ssh/another/id_rsa`) and `pbcopy < ~/.ssh/id_rsa.pub`, then add it to Github SSH keys. Type `ssh-add -K ~/.ssh/id_rsa` to store the passphrase (`-K` for adding in your keychain).
-11. 默认截屏，`Shift-Command-3` 捕捉整个屏幕，`Shift-Command-4` 捕捉屏幕的一部分，`Shift-Command 5` 打开截屏工具，可以设置延迟截屏，文件的存储位置 (某一路径或剪贴板)。`Shift-Command-4` + 空格键，指针会变为相机图标，点击可以捕获完整的窗口。https://support.apple.com/en-us/HT201361
+11. 默认截屏，`Shift-Command-3` 捕捉整个屏幕，`Shift-Command-4` 捕捉屏幕的一部分，`Shift-Command-5` 打开截屏工具，可以设置延迟截屏，文件的存储位置 (某一路径或剪贴板)。`Shift-Command-4` 的一些补充交互：
+    - 选择区域之前按下 `space`，指针会变为相机图标，点击可以捕获完整的窗口
+    - 选择区域后按住 `space`，可以移动选区
+    - `+ option`, adjust selection symmetrically
+    - `+ shift`, adjust in one direction only
