@@ -1,4 +1,7 @@
-# kexiZeroing.github.io
+# kexiZeroing.github.io (This repo has been replaced with an astro blog)
+
+> Below texts are original info for the personal site
+
 ### My Blog
 https://kexizeroing.github.io
 
